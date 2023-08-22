@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+		padding: 50px;
+		background: #f2f2f2;
+}
+h1 {
+		 color: #808080d6;
+		 letter-spacing: 0.2em;
+}
+#bulbImg {
+		width: 200px;
+		margin: 40px;
+}
+.container {
+    text-align: center;
+}
+.container {
+		box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+		padding: 20px;
+		background-color: #5a5858;
+		
+}
+#bulb-button {
+    display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+}
+.button{
+	background-image: url("ON_OFF copy.jpeg");
+	background-size: cover;
+	height: 50px;
+	width: 90px;
+	border-radius: 100px;
+}
+    </style>
+</head>
+<body >
+    <script>
+        var state = 0;
+		function changeBulbImage() {
+			if (state == 1) {
+				document.getElementById("bulbImg").src="light-bulb-off.png";
+				document.getElementById("text").innerHTML="LIGHTS OFF";
+				document.getElementById("backgroundcolor").style.background="#5a5858"
+				document.getElementById("bulb-button").style.backgroundImage="url('ON_OFF copy.jpeg')"
+				
+				
+                
+				state = 0;
+			} else {
+				document.getElementById("bulbImg").src="light-bulb-on.png";
+                document.getElementById("text").innerHTML="LIGHTS ON";
+				state = 1;
+				document.getElementById("backgroundcolor").style.background="YELLOW"
+				document.getElementById("bulb-button").style.backgroundImage="url('ON_OFF.jpeg')";
+			}
+		}
+    </script>
+    <div class="container" id="backgroundcolor">
+		<h1 id="text">LIGHTS OUT</h1>
+		<img id="bulbImg" src="light-bulb-off.png" alt="Blub">
+		<button class="button" id="bulb-button" type="button" onclick="changeBulbImage()">   </button>	
+	</div>
+</body>
+</html>
